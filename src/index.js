@@ -5,11 +5,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 // components takes precedence over default styles.
 // import './index.css';
 import App from './App';
+import Window from './Window'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Window />
   </React.StrictMode>,
   document.getElementById('root')
 );
