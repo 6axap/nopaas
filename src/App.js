@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import fetchGraphQL from './fetchGraphQL';
+// import fetchGraphQL from './fetchGraphQL';
 
 const { useState, useEffect } = React;
 
@@ -9,7 +9,7 @@ function App() {
   const [name, setName] = useState(null);
 
   // When the component mounts we'll fetch a repository name
-  useEffect(() => {
+/*   useEffect(() => {
     let isMounted = true;
     fetchGraphQL(`
       query RepositoryNameQuery {
@@ -33,7 +33,7 @@ function App() {
       isMounted = false;
     };
   }, [fetchGraphQL]);
-
+ */
   // Render "Loading" until the query completes
   return (
     <div className="App">

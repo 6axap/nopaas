@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
+import './App.css';
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
 // import './index.css';
-import App from './App';
-import Window from './Window'
+import Window from './Window';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
