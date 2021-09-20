@@ -1,6 +1,5 @@
 import React from "react";
 import './App.css';
-import fetchGraphQL from './fetchGraphQL';
 import Table from "./table";
 
 function Main() {

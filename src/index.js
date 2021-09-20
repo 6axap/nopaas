@@ -7,7 +7,7 @@ import './App.css';
 // import './index.css';
 import Window from './Window';
 // import App from './App';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './example/reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>

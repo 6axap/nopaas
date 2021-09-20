@@ -1,6 +1,6 @@
 // your-app-name/src/App.js
 import React from 'react';
-import Main from './Main';
+import Main from './SiteTable';
 import Header from './Header';
 import './App.css';
 // import fetchGraphQL from './fetchGraphQL';
