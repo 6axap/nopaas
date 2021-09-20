@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from "react";
-import './App.css';
+import axios from 'axios';
+import './style/App.css';
 
 function Table() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState({});
 
   useEffect(() => {
-    setData() => {
-      data = callBackendAPI();
-    }
-  })
+    callAPI();
+  }, []); // see above https://reactjs.org/docs/hooks-effect.html#next-steps
 
-  const callBackendAPI = async () => {
-    const res = await fetch('/sites');
-    const body = await res.json();
-
-    if (res.status !== 200) {
-    throw Error(body.message) 
-    }
-    return body;
+  const callAPI = async () => {
+    await fetch('http://localhost:3001/sites')
+      .then(res => res.json())
+      .then(res => {
+        setData(res)
+        console.log(data)
+      })
+      .catch(err => {
+        console.error(err)
+      });
   }
+
 
   return (
     <>
