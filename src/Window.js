@@ -10,7 +10,7 @@ function Window() {
     <div className="window">
       <Header />
       <Main />
-      <div class="b-example-divider"></div>
+      <div className="b-example-divider"></div>
     </div>
   );
 }

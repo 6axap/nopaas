@@ -4,7 +4,7 @@ function Header() {
   return (
     <>
       <header className="py-3 mb-3 border-bottom">
-        <div className="container-fluid d-grid gap-3 align-items-center" style={{ "grid-template-columns": "1fr 2fr" }}>
+        <div className="container-fluid d-grid gap-3 align-items-center" style={{ "gridTemplateColumns": "1fr 2fr" }}>
           <div className="dropdown">
             <a href="http://localhost:3000/#" className="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false">
               <svg className="bi me-2" width="40" height="32"><use xlinkHref="http://localhost:3000/#bootstrap"></use></svg>

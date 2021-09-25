@@ -3,7 +3,7 @@ import Table from "./table";
 
 function Main() {
   // const styles = { "grid-template-columns": "1fr 4fr" }
-  const styles = { "grid-template-columns": "4fr" }
+  const styles = { "gridTemplateColumns": "4fr" }
   return (
     <div className="container-fluid pb-3">
       <div className="d-grid gap-3" style={styles}>
