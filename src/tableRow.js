@@ -1,7 +1,7 @@
 import React from "react";
 
 function TableRow(props) {
-  const data = props.data;
+  const data = props;
   const los = data.ftthProjektInfo.losBezeichnung;
   const sidSite = data.siteInfo.sidSite;
   const status = data.akquisitionState.state;
@@ -12,8 +12,8 @@ function TableRow(props) {
   const hakType = data.ftthProjektInfo.hakTyp;
   const officesCount = data.nuEh.bus;
   const appartmentsCount = data.nuEh.priv;
+  console.log(props)
   
-
   return (
     <tr>
       <th scope="row">{props.index}</th>

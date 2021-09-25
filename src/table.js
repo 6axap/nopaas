@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import axios from 'axios';
 import './style/App.css';
 import TableRow from "./tableRow";
 
-function Table() {
-  const [state, setState] = useState({ data: [] });
+class Table extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: []
+    }
+  }
 
   // const callAPI = async () => {
   //   await fetch('http://localhost:3001/sites', {
@@ -23,55 +28,64 @@ function Table() {
   //       console.error(err)
   //     });
   // }
-  useEffect(() => {
-    getData();
-  }, []);
+  
+  async componentDidMount() {
+    await this.getData()
+  }
 
-  async function getData() {
+  async getData() {
     try {
       const response = await axios.get('http://localhost:3001/sites');
       let data = response.data;
-      setState(({
+      this.setState({
         data: data
-      }));
+      });
     } catch (error) {
       console.error(error);
     }
   }
 
-  async function tableRows() {
-    state.data.forEach((row, index) => {
-    return (
-      <TableRow data={row} index={index + 1} />
-    );
-  })}
+  renderRow() {
+    return ();
+  }
 
-  return (
-    <>
-      <h1>Sites</h1>
-      <table className="table table-striped table-hover table-bordered table-sm">
-      <thead>
-          <tr>
-          <th scope="col">#</th>
-          <th scope="col">Lot</th>
-          <th scope="col">SID Site</th>
-          <th scope="col">Status</th>
-          <th scope="col">Site Type</th>
-          <th scope="col">Address</th>
-          <th scope="col">City</th>
-          <th scope="col">Municipality</th>
-          <th scope="col">HAK Type</th>
-          <th scope="col">Offices</th>
-          <th scope="col">Appartments</th>
-          </tr>
-      </thead>
-      <tbody>
-          {tableRows}
-          {console.log(tableRows)}
-      </tbody>
-      </table> 
-    </>
-  );
+
+  render() {
+    const data = this.state.data;
+    const tableRows = data.forEach((row, index) => {
+      console.log(row)
+      return (
+        <TableRow data={row} index={index + 1} />
+      );
+    })
+
+    return (
+      <>
+        <h1>Sites</h1>
+        <table className="table table-striped table-hover table-bordered table-sm">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Lot</th>
+            <th scope="col">SID Site</th>
+            <th scope="col">Status</th>
+            <th scope="col">Site Type</th>
+            <th scope="col">Address</th>
+            <th scope="col">City</th>
+            <th scope="col">Municipality</th>
+            <th scope="col">HAK Type</th>
+            <th scope="col">Offices</th>
+            <th scope="col">Appartments</th>
+            </tr>
+        </thead>
+        <tbody>
+            {tableRows}
+            {console.log(tableRows)}
+        </tbody>
+        </table> 
+      </>
+    );
+  };
 }
 
 export default Table;
